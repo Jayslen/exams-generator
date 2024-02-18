@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+
+body{
+    background-color: #c0c0c0;
+}
+main {
+    margin: 5rem 25rem;
+}
+
+h1, h2 {
+    font-family: 'Satoshi', sans-serif;
+}
+p, span {
+    font-family: 'General Sans', sans-serif;
+}
