@@ -7,8 +7,8 @@ export function QuestionComponent ({ title, type, placeholder, name, obligatory 
         placeholder={placeholder}
         required={obligatory}
         name={name}
-        max={type === 'number' && 15}
-        min={type === 'number' && 1}
+        max={type === 'number' ? 15 : undefined}
+        min={type === 'number' ? 1 : undefined}
         className="inputs"
       />
     </label>

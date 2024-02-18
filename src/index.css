@@ -13,8 +13,14 @@ main {
 h1, h2, label {
     font-family: 'Satoshi', sans-serif;
 }
-p,  input {
+p,  input, textarea {
     font-family: 'General Sans', sans-serif;
+}
+
+textarea{
+    overflow: auto;
+    scrollbar-color: #8e8781 transparent;
+    scrollbar-width: thin;
 }
 @layer components {
     .inputs {
