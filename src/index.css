@@ -4,15 +4,20 @@
 
 
 body{
-    background-color: #c0c0c0;
+    background-color: #E5E4E2;
 }
 main {
-    margin: 5rem 25rem;
+    margin: 1rem 25rem;
 }
 
-h1, h2 {
+h1, h2, label {
     font-family: 'Satoshi', sans-serif;
 }
-p, span {
+p,  input {
     font-family: 'General Sans', sans-serif;
 }
+@layer components {
+    .inputs {
+      @apply w-full p-4 rounded-2xl bg-white ring-1 ring-[#a19c96] focus:outline-none focus:ring-2 focus:ring-[#8e8781] focus:border-transparent transition duration-500 ease-in-out hover:shadow-lg
+    }
+  }
