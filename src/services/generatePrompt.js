@@ -1,5 +1,5 @@
 export function createPrompt ({ amountOfQuestions, text }) {
-  return `redacta ${amountOfQuestions} preguntas de seleccion multiple sobre el texto que te voy a proveer y damelos en un objeto que en la key questions tenga todas las preguntas que cada pregunta tenga el siguiente formato:
+  return `redacta ${amountOfQuestions} preguntas de seleccion multiple sobre el texto que te voy a proveer y damelos en un objeto que en la key questions tenga todas las preguntas y que cada pregunta tenga el siguiente formato:
       {
         "question": "pregunta en español",
         "options": [

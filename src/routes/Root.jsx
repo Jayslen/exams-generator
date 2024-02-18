@@ -19,9 +19,14 @@ export function Root () {
 
     generateQuestions({ prompt })
       .then((questions) => {
-        const generatedExam = JSON.parse(
-          questions.replaceAll('`', '').replace('json', '')
-        )
+        let generatedExam
+        if (questions.includes('`')) {
+          generatedExam = JSON.parse(
+            questions.replaceAll('`', '').replace('json', '')
+          )
+        } else {
+          generatedExam = JSON.parse(questions)
+        }
         generatedExam.id = crypto.randomUUID()
         window.localStorage.setItem('exams', JSON.stringify(generatedExam))
         updateQuestions(generatedExam)
