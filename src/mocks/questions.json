@@ -1,0 +1,113 @@
+[
+  {
+    "questions": [
+      {
+        "question": "¿Cuál es el objetivo del mantenimiento preventivo?",
+        "options": [
+          "Reparar equipos o instalaciones",
+          "Conservar equipos o instalaciones",
+          "Mejorar el rendimiento de las computadoras",
+          "Prevenir problemas potenciales"
+        ],
+        "correctAnswer": "Conservar equipos o instalaciones"
+      },
+      {
+        "question": "¿En qué consiste el mantenimiento preventivo?",
+        "options": [
+          "Inspecciones, limpiezas y reemplazos periódicos",
+          "Reparaciones urgentes cuando el equipo falla",
+          "Actualizaciones de software y controladores",
+          "Monitoreo constante de sistemas"
+        ],
+        "correctAnswer": "Inspecciones, limpiezas y reemplazos periódicos"
+      },
+      {
+        "question": "¿Cuáles son los beneficios del mantenimiento preventivo?",
+        "options": [
+          "Reducir fallas, alargar la vida útil y mejorar la seguridad de los datos",
+          "Aumentar el tiempo de inactividad del equipo",
+          "Incrementar los costos de reparación",
+          "Ninguno de los anteriores"
+        ],
+        "correctAnswer": "Reducir fallas, alargar la vida útil y mejorar la seguridad de los datos"
+      },
+      {
+        "question": "¿Qué tareas incluyen el mantenimiento preventivo del software?",
+        "options": [
+          "Revisar programas de inicio y detectar malware",
+          "Instalar nuevas aplicaciones",
+          "Eliminar archivos temporales",
+          "Todas las anteriores"
+        ],
+        "correctAnswer": "Revisar programas de inicio y detectar malware"
+      },
+      {
+        "question": "¿Cuál es la importancia de la resolución de problemas en el mantenimiento preventivo?",
+        "options": [
+          "Permite identificar y solucionar problemas antes de que se vuelvan graves",
+          "Reduce la necesidad de mantenimiento preventivo regular",
+          "No es esencial para el mantenimiento preventivo",
+          "Solo es aplicable a problemas de hardware"
+        ],
+        "correctAnswer": "Permite identificar y solucionar problemas antes de que se vuelvan graves"
+      },
+      {
+        "question": "¿De qué factores depende la frecuencia del mantenimiento preventivo?",
+        "options": [
+          "Entorno y uso del equipo",
+          "Tipo de equipo y software",
+          "Duración del uso diario",
+          "Temperatura y humedad del ambiente"
+        ],
+        "correctAnswer": "Entorno y uso del equipo"
+      },
+      {
+        "question": "¿Qué tipo de entorno requiere un mantenimiento preventivo más regular?",
+        "options": [
+          "Limpio y libre de polvo",
+          "Polvoriento y con altas temperaturas",
+          "Húmedo y con mucha circulación de aire",
+          "Fresco y bien ventilado"
+        ],
+        "correctAnswer": "Polvoriento y con altas temperaturas"
+      },
+      {
+        "question": "¿Cómo contribuye el mantenimiento preventivo a la protección de los datos?",
+        "options": [
+          "Reduciendo el riesgo de fallas de hardware que puedan dañar los datos",
+          "Haciendo copias de seguridad regulares",
+          "Instalando antivirus y software antimalware",
+          "Todas las anteriores"
+        ],
+        "correctAnswer": "Reduciendo el riesgo de fallas de hardware que puedan dañar los datos"
+      },
+      {
+        "question": "¿Cuál es una ventaja adicional del mantenimiento preventivo?",
+        "options": [
+          "Menor tiempo de inactividad del equipo",
+          "Mayor productividad",
+          "Satisfacción del usuario",
+          "Todas las anteriores"
+        ],
+        "correctAnswer": "Todas las anteriores"
+      },
+      {
+        "question": "¿Qué profesionales son conscientes de la importancia del mantenimiento preventivo?",
+        "options": [
+          "Técnicos en reparación de computadoras",
+          "Profesionales de TI",
+          "Usuarios de computadoras",
+          "Administradores de redes"
+        ],
+        "correctAnswer": "Profesionales de TI"
+      }
+    ],
+    "id": "50c6078f-f6da-467c-9974-907da586717d"
+  },
+  {
+    "id": "123",
+    "title": "hola",
+    "questions": [],
+    "notes": "hola"
+  }
+]
