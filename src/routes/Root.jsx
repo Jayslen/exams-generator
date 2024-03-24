@@ -1,65 +1,35 @@
-import { useContext } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { FullScreenIcon } from '../assets/FullScreenIcon'
-import { QuestionComponent } from '../components/QuestionComponent'
-import { createPrompt } from '../services/generatePrompt'
-import { generateQuestions } from '../services/getQuestions'
-import { questionsContext } from '../context/QuestionsContext'
+import 'react-toastify/dist/ReactToastify.css'
+import { ToastContainer } from 'react-toastify'
+import { FullScreenIcon } from '../assets/Icons'
+import { PromptInput } from '../components/PromptInput'
+import { Button } from '../components/Buttons'
+import { useGenerateQuestion } from '../hooks/useGenerateQuestions'
 
 export function Root () {
-  const { updateQuestions } = useContext(questionsContext)
-  const navigate = useNavigate()
-  const formGenerateQuestions = (e) => {
-    e.preventDefault()
-    const { amount, notes } = Object.fromEntries(new FormData(e.target))
-    const prompt = createPrompt({
-      amountOfQuestions: amount,
-      text: notes
-    })
-
-    generateQuestions({ prompt })
-      .then((questions) => {
-        let generatedExam
-        if (questions.includes('`')) {
-          generatedExam = JSON.parse(
-            questions.replaceAll('`', '').replace('json', '')
-          )
-        } else {
-          generatedExam = JSON.parse(questions)
-        }
-        generatedExam.id = crypto.randomUUID()
-        window.localStorage.setItem('exams', JSON.stringify(generatedExam))
-        updateQuestions(generatedExam)
-        navigate(`/exam/${generatedExam.id}`)
-      })
-      .catch((error) => {
-        console.error(error)
-      })
-      .finally(() => {
-        console.log('done')
-      })
-  }
+  const { formGenerateQuestions, goToExam } = useGenerateQuestion()
   return (
     <main>
-      <h1 className="text-7xl font-black">
-        Practica generando generando tus examnes.
-      </h1>
-      <p className="text-4xl my-4">
-        Genera tus exames a partir de un tema en especifico o de tus notas
-        personales.
-      </p>
+      <header>
+        <h1 className="text-7xl font-black">
+          Practica generando generando tus examnes.
+        </h1>
+        <p className="text-4xl my-4">
+          Genera tus exames a partir de un tema en especifico o de tus notas
+          personales.
+        </p>
+      </header>
       <form
-        className="my-4 flex flex-col w-3/4"
+        className="my-4 flex flex-col w-[70%]"
         onSubmit={formGenerateQuestions}
       >
         <div className="grid grid-cols-[0.7fr,0.4fr] gap-3">
-          <QuestionComponent
+          <PromptInput
             type={'text'}
             title={'Titulo'}
-            placeholder={'Opcional'}
+            placeholder={'Ej: Fundamentos de programación'}
             name={'title'}
           />
-          <QuestionComponent
+          <PromptInput
             type={'number'}
             title={'Cantidad de preguntas'}
             placeholder={'10'}
@@ -70,7 +40,7 @@ export function Root () {
         <label className="col-span-2 row-span-2 relative">
           <div className="absolute bottom-4 right-3">{<FullScreenIcon />}</div>
           <span className="font-black text-2xl font-Satoshi block my-2">
-            Notas
+            Apuntes
           </span>
           <textarea
             name="notes"
@@ -78,10 +48,14 @@ export function Root () {
             className="inputs resize-none"
           ></textarea>
         </label>
-        <button className="bg-[#8A2BE2] text-white self-start rounded-md px-8 py-4">
-          Generar Examen
-        </button>
+        <footer className='flex gap-4'>
+          <Button text={'Generar Preguntas'} type={'submit'}/>
+          <Button text={'Generar Examen'} handleClick={goToExam} />
+
+        </footer>
+
       </form>
+      <ToastContainer />
     </main>
   )
 }
