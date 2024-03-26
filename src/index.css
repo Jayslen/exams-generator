@@ -5,13 +5,14 @@
 
 body{
     background-color: #E5E4E2;
-    overflow-y: hidden;
+        /* overflow-y: hidden; */
 
 }
 main {
     box-sizing: border-box;
-    margin: 2rem 25rem ;
-    height: 100vh;
+    margin: 0 25rem ;
+    padding-top: 2rem;
+    min-height: 100vh;
 }
 
 h1, h2, label {
@@ -26,6 +27,23 @@ textarea{
     scrollbar-color: #8e8781 transparent;
     scrollbar-width: thin;
 }
+
+.animationButton {
+    animation: click 200ms  ease-in-out;
+}
+
+@keyframes click {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 @layer components {
     .inputs {
       @apply w-full p-4 rounded-lg bg-white ring-1 ring-[#a19c96] focus:outline-none focus:ring-2 focus:ring-[#8e8781] focus:border-transparent transition duration-500 ease-in-out hover:shadow-lg
