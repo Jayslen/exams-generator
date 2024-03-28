@@ -1,42 +1,40 @@
-export function CheckIcon () {
+export function CheckIcon ({ width = 24, height = 24 }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="icon icon-tabler icon-tabler-circle-check"
-      width={24}
-      height={24}
+      width={width}
+      height={height}
       viewBox="0 0 24 24"
-      strokeWidth={2}
-      stroke="currentColor"
       fill="none"
+      stroke="currentColor"
+      strokeWidth={1.5}
       strokeLinecap="round"
       strokeLinejoin="round"
+      className="icon icon-tabler icons-tabler-outline icon-tabler-check"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
-      <path d="M9 12l2 2l4 -4" />
+      <path d="M5 12l5 5l10 -10" />
     </svg>
   )
 }
 
-export function XIcon () {
+export function XIcon ({ width = 24, height = 24 }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="icon icon-tabler icon-tabler-xbox-x"
-      width={24}
-      height={24}
+      width={width}
+      height={height}
       viewBox="0 0 24 24"
-      strokeWidth={2}
-      stroke="currentColor"
       fill="none"
+      stroke="currentColor"
+      strokeWidth={1.5}
       strokeLinecap="round"
       strokeLinejoin="round"
+      className="icon icon-tabler icons-tabler-outline icon-tabler-x"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <path d="M12 21a9 9 0 0 0 9 -9a9 9 0 0 0 -9 -9a9 9 0 0 0 -9 9a9 9 0 0 0 9 9z" />
-      <path d="M9 8l6 8" />
-      <path d="M15 8l-6 8" />
+      <path d="M18 6l-12 12" />
+      <path d="M6 6l12 12" />
     </svg>
   )
 }
@@ -70,7 +68,13 @@ export function FullScreenIcon () {
 
 export function LoadingIcon () {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width={160} height={160} className='m-auto'>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 200 200"
+      width={160}
+      height={160}
+      className="m-auto"
+    >
       <circle
         fill="#B4AEAC"
         stroke="#B4AEAC"
