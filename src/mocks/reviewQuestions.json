@@ -1,0 +1,62 @@
+[
+  {
+    "question": "¿Qué es una dirección MAC y cuál es su propósito?",
+    "options": [
+      "Un identificador único para dispositivos de red que permite la comunicación entre ellos",
+      "Un protocolo que asigna direcciones IP a dispositivos en una red",
+      "Una capa del modelo OSI que maneja la transmisión física de datos",
+      "Un software que protege las redes contra ataques cibernéticos"
+    ],
+    "userAnswer": "Un software que protege las redes contra ataques cibernéticos",
+    "correctAnswer": "Un identificador único para dispositivos de red que permite la comunicación entre ellos",
+    "isCorrect": true
+  },
+  {
+    "question": "¿Cómo se puede asignar una dirección MAC a un dispositivo?",
+    "options": [
+      "Automáticamente por un servidor DHCP",
+      "Manualmente por un administrador de red",
+      "Por el dispositivo mismo utilizando SLAAC",
+      "Todas las anteriores"
+    ],
+    "userAnswer": "Todas las anteriores",
+    "correctAnswer": "Todas las anteriores",
+    "isCorrect": false
+  },
+  {
+    "question": "¿Cuál es la diferencia entre asignación estática y dinámica de direcciones IPv4?",
+    "options": [
+      "Las direcciones estáticas se asignan manualmente mientras que las dinámicas se asignan automáticamente",
+      "Las direcciones dinámicas se utilizan para dispositivos móviles mientras que las estáticas para dispositivos fijos",
+      "Las direcciones estáticas son más seguras que las dinámicas",
+      "No hay diferencia entre ellas"
+    ],
+    "userAnswer": "Las direcciones dinámicas se utilizan para dispositivos móviles mientras que las estáticas para dispositivos fijos",
+    "correctAnswer": "Las direcciones estáticas se asignan manualmente mientras que las dinámicas se asignan automáticamente",
+    "isCorrect": true
+  },
+  {
+    "question": "¿Qué tipo de direcciones IPv6 introdujo un concepto para la transmisión eficiente de datos a múltiples destinatarios?",
+    "options": [
+      "Direcciones de difusión",
+      "Direcciones anycast",
+      "Direcciones multicast",
+      "Direcciones de enlace local"
+    ],
+    "userAnswer": "Direcciones multicast",
+    "correctAnswer": "Direcciones multicast",
+    "isCorrect": false
+  },
+  {
+    "question": "¿Cuál de las siguientes ventajas proporciona IPv6 sobre IPv4?",
+    "options": [
+      "Un espacio de direccionamiento mucho más amplio",
+      "Mejoras en la seguridad",
+      " Mayor velocidad de transmisión",
+      "Mejor gestión de redes"
+    ],
+    "userAnswer": "Un espacio de direccionamiento mucho más amplio",
+    "correctAnswer": "Un espacio de direccionamiento mucho más amplio",
+    "isCorrect": false
+  }
+]

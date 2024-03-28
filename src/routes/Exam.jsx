@@ -1,6 +1,4 @@
-import { useId } from 'react'
 import { useParams } from 'react-router-dom'
-import { CheckIcon, XIcon } from '../assets/Icons'
 import { useManageForm } from '../hooks/useManageForm'
 import { Button } from '../components/Buttons'
 import { QuestionComponent } from '../components/QuestionComponent'
@@ -17,17 +15,15 @@ export function Exam () {
     CURRENT_QUESTION,
     CURRENT_ANSWER_IS_CORRECT,
     CURRENT_ANSWER_IS_WRONG,
-    handleSubmit,
-    setcurrentQuestionIndex
+    handleSubmit
   } = useManageForm({ id })
 
-  const notification = CURRENT_ANSWER_IS_CORRECT
-    ? 'Has acertado'
-    : 'Has fallado'
+  const ANSWER_MESSAGE = CURRENT_ANSWER_IS_CORRECT ? 'Has acertado' : 'Has fallado'
+  const BUTTON_TEXT = currentQuestionIndex === CURRENT_EXAM.length - 1 && currentAnswer ? 'Revision de examen' : isChecked ? 'Siguiente pregunta' : 'Verificar pregunta'
 
   return (
     <main className="grid place-content-center">
-      <section className="grid grid-cols-[0.6fr,0.4fr] w-full">
+      <section className="grid grid-cols-[0.65fr,0.35fr] gap-1.5 w-full">
         <div>
           <span className="font-bold text-[#5a5552] text-lg">
             Pregunta {`${currentQuestionIndex + 1} / ${CURRENT_EXAM.length}`}
@@ -35,10 +31,10 @@ export function Exam () {
           <h1 className="w-full font-black text-6xl">{question}</h1>
         </div>
 
-        <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
+        <form className="flex flex-col gap-3 relative" onSubmit={handleSubmit}>
 
           {(CURRENT_ANSWER_IS_CORRECT || CURRENT_ANSWER_IS_WRONG) && (
-            <p className="font-bold italic absolute -top-10">{notification}</p>
+            <p className="font-bold italic text-lg absolute -top-10 left-4">{ANSWER_MESSAGE}</p>
           )}
 
           {options.map((value, index) => {
@@ -55,15 +51,8 @@ export function Exam () {
               />
             )
           })}
-          <footer className="gap-3 grid grid-cols-2">
-            <Button
-              text={'Pregunta anterior'}
-              handleClick={() => {
-                setcurrentQuestionIndex((prev) => prev - 1)
-              }}
-              type={'button'}
-            />
-            <Button text={'Verificar pregunta'} type={'submit'} />
+          <footer className="grid grid-cols-1">
+            <Button text={BUTTON_TEXT} type={'submit'} />
           </footer>
         </form>
       </section>
