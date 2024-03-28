@@ -70,7 +70,7 @@ export function FullScreenIcon () {
 
 export function LoadingIcon () {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width={120} height={120} className='m-auto'>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width={160} height={160} className='m-auto'>
       <circle
         fill="#B4AEAC"
         stroke="#B4AEAC"
