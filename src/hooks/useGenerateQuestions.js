@@ -1,13 +1,35 @@
-import { useContext } from 'react'
+import { useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { createPrompt } from '../services/generatePrompt'
 import { generateQuestions } from '../services/getQuestions'
-import { questionsContext } from '../context/QuestionsContext'
 
 export function useGenerateQuestion () {
-  const { updateQuestions, questions: examsQuestions } = useContext(questionsContext)
+  const [examsQuestions, setExamsQuestions] = useState([])
+  const [loader, setLoader] = useState(false)
+  const isIdGenerated = useRef(false)
   const navigate = useNavigate()
+
+  const updateQuestions = ({ newQuestions, id }) => {
+    setExamsQuestions((prev) => {
+      if (!prev?.questions) {
+        // If there are no questions, we create a new array with the new questions, and we add the id
+        return {
+          questions: [...newQuestions],
+          id
+        }
+      }
+      return {
+        // If there are questions, we add the new questions to the existing ones and we keep the id
+        ...prev,
+        questions: [...newQuestions, ...prev.questions]
+      }
+    })
+  }
+  const clearQuestions = () => {
+    setExamsQuestions([])
+  }
+
   const formGenerateQuestions = (e) => {
     e.preventDefault()
     const { amount, notes } = Object.fromEntries(new FormData(e.target))
@@ -21,6 +43,8 @@ export function useGenerateQuestion () {
       text: notes
     })
 
+    setLoader((prev) => !prev)
+
     generateQuestions({ prompt })
       .then((questions) => {
         let generatedExam
@@ -32,31 +56,50 @@ export function useGenerateQuestion () {
           generatedExam = JSON.parse(questions)
         }
 
-        updateQuestions({ newQuestions: generatedExam.questions, id: '7894564' })
-        toast.success(`${amount} mas añadidas, Total de preguntas ${examsQuestions.length + Number(amount)}`)
+        if (!isIdGenerated.current) {
+          updateQuestions({
+            newQuestions: generatedExam.questions,
+            id: crypto.randomUUID()
+          })
+          isIdGenerated.current = true
+        } else {
+          updateQuestions({
+            newQuestions: generatedExam.questions
+          })
+        }
+
+        toast.success(
+          `${amount} preguntas mas añadidas ${examsQuestions?.questions?.length ?? 0 + Number(amount)} preguntas en total.`
+        )
       })
       .catch((error) => {
         console.error(error)
-        toast.error('Ha ocurrido un error.')
+        toast.error('Ha ocurrido un error, genere las preguntas nuevamente.')
       })
       .finally(() => {
-        console.log('Peticion finalizada')
+        setLoader((prev) => !prev)
       })
   }
 
   const goToExam = () => {
     const exams = JSON.parse(window.localStorage.getItem('exams'))
+    const currentExamId = examsQuestions.id
+    if (!currentExamId) {
+      toast.error('Debes generar preguntas antes de generar el examen.')
+      return
+    }
+
     window.localStorage.setItem(
       'exams',
-      JSON.stringify([
-        exams,
-        examsQuestions
-      ])
+      JSON.stringify([examsQuestions])
     )
-    navigate('/exam/7894564')
+
+    navigate(`/exam/${currentExamId}`)
+    clearQuestions()
   }
   return {
     formGenerateQuestions,
-    goToExam
+    goToExam,
+    loader
   }
 }

@@ -1,14 +1,14 @@
 import 'react-toastify/dist/ReactToastify.css'
-import { ToastContainer } from 'react-toastify'
-import { FullScreenIcon } from '../assets/Icons'
 import { PromptInput } from '../components/PromptInput'
 import { Button } from '../components/Buttons'
+import { LoadingScreen } from '../components/LoadingScreen'
 import { useGenerateQuestion } from '../hooks/useGenerateQuestions'
 
 export function Root () {
-  const { formGenerateQuestions, goToExam } = useGenerateQuestion()
+  const { formGenerateQuestions, goToExam, loader } = useGenerateQuestion()
   return (
     <main>
+      {loader && <LoadingScreen/>}
       <header>
         <h1 className="text-7xl font-black">
           Practica generando generando tus examnes.
@@ -34,11 +34,9 @@ export function Root () {
             title={'Cantidad de preguntas'}
             placeholder={'10'}
             name={'amount'}
-            obligatory={true}
           />
         </div>
         <label className="col-span-2 row-span-2 relative">
-          <div className="absolute bottom-4 right-3">{<FullScreenIcon />}</div>
           <span className="font-black text-2xl font-Satoshi block my-2">
             Apuntes
           </span>
@@ -48,14 +46,11 @@ export function Root () {
             className="inputs resize-none"
           ></textarea>
         </label>
-        <footer className='flex gap-4'>
+        <footer className='flex gap-4 my-4'>
           <Button text={'Generar Preguntas'} type={'submit'}/>
           <Button text={'Generar Examen'} handleClick={goToExam} />
-
         </footer>
-
       </form>
-      <ToastContainer />
     </main>
   )
 }
