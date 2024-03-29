@@ -7,15 +7,16 @@ import { generateQuestions } from '../services/getQuestions'
 export function useGenerateQuestion () {
   const [examsQuestions, setExamsQuestions] = useState([])
   const [loader, setLoader] = useState(false)
-  const isIdGenerated = useRef(false)
+  const isItGenerated = useRef(false)
   const navigate = useNavigate()
 
-  const updateQuestions = ({ newQuestions, id }) => {
+  const updateQuestions = ({ newQuestions, id, title }) => {
     setExamsQuestions((prev) => {
       if (!prev?.questions) {
         // If there are no questions, we create a new array with the new questions, and we add the id
         return {
           questions: [...newQuestions],
+          title,
           id
         }
       }
@@ -29,7 +30,7 @@ export function useGenerateQuestion () {
 
   const formGenerateQuestions = (e) => {
     e.preventDefault()
-    const { amount, notes } = Object.fromEntries(new FormData(e.target))
+    const { amount, notes, title } = Object.fromEntries(new FormData(e.target))
 
     if (!amount || !notes) {
       toast.error('Debes llenar todos los campos para continuar.')
@@ -53,12 +54,13 @@ export function useGenerateQuestion () {
           generatedExam = JSON.parse(questions)
         }
 
-        if (!isIdGenerated.current) {
+        if (!isItGenerated.current) {
           updateQuestions({
             newQuestions: generatedExam.questions,
-            id: crypto.randomUUID()
+            id: crypto.randomUUID(),
+            title
           })
-          isIdGenerated.current = true
+          isItGenerated.current = true
         } else {
           updateQuestions({
             newQuestions: generatedExam.questions
