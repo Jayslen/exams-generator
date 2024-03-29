@@ -26,9 +26,6 @@ export function useGenerateQuestion () {
       }
     })
   }
-  const clearQuestions = () => {
-    setExamsQuestions([])
-  }
 
   const formGenerateQuestions = (e) => {
     e.preventDefault()
@@ -91,11 +88,11 @@ export function useGenerateQuestion () {
 
     window.localStorage.setItem(
       'exams',
-      JSON.stringify([examsQuestions])
+      JSON.stringify(exams ? [...exams, examsQuestions] : [examsQuestions])
     )
 
     navigate(`/exam/${currentExamId}`)
-    clearQuestions()
+    setExamsQuestions([])
   }
   return {
     formGenerateQuestions,
