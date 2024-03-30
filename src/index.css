@@ -2,6 +2,11 @@
 @tailwind utilities;
 @tailwind components;
 
+@layer components {
+    .inputs {
+      @apply w-full p-4 rounded bg-white ring-1 ring-[#a19c96] focus:outline-none focus:ring-2 focus:ring-[#8e8781] focus:border-transparent transition duration-500 ease-in-out hover:shadow-lg
+    }
+  }
 
 body{
     background-color: #f6f5f5;
@@ -9,8 +14,8 @@ body{
 main {
     box-sizing: border-box;
     margin: 0 25rem ;
-    padding-top: 2rem;
-    min-height: 100vh;
+    padding-top: 1.35rem;
+
 }
 
 h1, h2, h3, label {
@@ -28,18 +33,6 @@ textarea{
 
 .animationButton {
     animation: click 200ms  ease-in-out;
-}
-
-@keyframes click {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(0.9);
-    }
-    100% {
-        transform: scale(1);
-    }
 }
 
 .animation-modal {
@@ -68,8 +61,38 @@ textarea{
     }
 }
 
-@layer components {
-    .inputs {
-      @apply w-full p-4 rounded bg-white ring-1 ring-[#a19c96] focus:outline-none focus:ring-2 focus:ring-[#8e8781] focus:border-transparent transition duration-500 ease-in-out hover:shadow-lg
+@keyframes click {
+    0% {
+        transform: scale(1);
     }
-  }
+    50% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 1920px) {
+    main {
+        margin: 0 25rem;
+    }
+}
+
+@media (max-width: 1600px) {
+    main {
+        margin: 0 10rem;
+    }
+}
+
+@media (max-width: 1280px) {
+    main {
+        margin: 0 7rem;
+    }
+}
+
+@media (max-width: 640px) {
+    main {
+        margin: 0 1rem;
+    }
+}

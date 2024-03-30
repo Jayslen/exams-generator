@@ -1,7 +1,7 @@
 export function PromptInput ({ title, type, placeholder, name, obligatory }) {
   return (
-      <label className="font-Satoshi text-4x flex flex-col">
-        <span className="font-black text-2xl font-Satoshi">{title}</span>
+      <label className="font-Satoshi flex flex-col">
+        <span className="font-black text-xl lg:text-2xl">{title}</span>
         <input
           type={type}
           placeholder={placeholder}

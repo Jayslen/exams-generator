@@ -22,13 +22,13 @@ export function Exam () {
   const BUTTON_TEXT = currentQuestionIndex === CURRENT_EXAM.length - 1 && currentAnswer ? 'Revision de examen' : isChecked ? 'Siguiente pregunta' : 'Verificar pregunta'
 
   return (
-    <main className="grid place-content-center">
-      <section className="grid grid-cols-[0.65fr,0.35fr] max-w-5xl w-[1024px] bg-red-100">
+    <main className="grid place-content-center lg:h-screen">
+      <section className="flex flex-col gap-12 lg:gap-4 lg:grid lg:grid-cols-[0.65fr,0.35fr] max-w-5xl lg:w-[1000px]">
         <div>
           <span className="font-bold text-[#5a5552] text-lg">
             Pregunta {`${currentQuestionIndex + 1} / ${CURRENT_EXAM.length}`}
           </span>
-          <h1 className="w-full font-black text-6xl">{question}</h1>
+          <h1 className="w-full font-black text-4xl lg:text-6xl text-balance">{question}</h1>
         </div>
 
         <form className="flex flex-col gap-3 relative" onSubmit={handleSubmit}>

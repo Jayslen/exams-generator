@@ -18,7 +18,7 @@ export function ExamGenerated ({ title = 'Examen', amount, hasRevision, id, remo
         <p className="text-chicago-950 italic font-medium">
           Cantidad de preguntas: {amount}
         </p>
-        <div className="flex gap-4">
+        <div className="flex flex-col gap-0.5 xl:gap-2 xl:flex-row">
           <LinkComponent linkTo={`/exam/${id}`} text={'Ir al examen'} />
           <LinkComponent
             linkTo={hasRevision ? `/review/${id}` : '#'}
@@ -26,7 +26,7 @@ export function ExamGenerated ({ title = 'Examen', amount, hasRevision, id, remo
           />
         </div>
         <div
-          className="absolute bottom-4 right-4 hover:text-red-600 cursor-pointer"
+          className="absolute top-4 right-4 hover:text-red-600 cursor-pointer lg:bottom-4"
           onClick={() => {
             setOpenModal((prev) => !prev)
           }}

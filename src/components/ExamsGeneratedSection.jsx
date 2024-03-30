@@ -16,7 +16,7 @@ export function ExamsGeneratedSection () {
   return (
     <aside
       style={{ scrollbarWidth: 'none' }}
-      className="h-full w-full overflow-y-scroll"
+      className="h-full w-full overflow-y-scroll hidden md:block"
     >
       <h2 className="font-black text-xl">Examenes generados.</h2>
       <ul className="flex flex-col gap-3">
