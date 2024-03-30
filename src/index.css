@@ -4,9 +4,7 @@
 
 
 body{
-    background-color: #E5E4E2;
-        /* overflow-y: hidden; */
-
+    background-color: #f6f5f5;
 }
 main {
     box-sizing: border-box;
@@ -15,7 +13,7 @@ main {
     min-height: 100vh;
 }
 
-h1, h2, label {
+h1, h2, h3, label {
     font-family: 'Satoshi', sans-serif;
 }
 p,  input, textarea {
@@ -44,8 +42,34 @@ textarea{
     }
 }
 
+.animation-modal {
+    animation: open 500ms ease forwards;
+}
+
+.animation-modal-close {
+    animation: close 500ms ease forwards;
+}
+
+@keyframes close {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes open {
+    0% {
+        transform: scale(0.4);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 @layer components {
     .inputs {
-      @apply w-full p-4 rounded-lg bg-white ring-1 ring-[#a19c96] focus:outline-none focus:ring-2 focus:ring-[#8e8781] focus:border-transparent transition duration-500 ease-in-out hover:shadow-lg
+      @apply w-full p-4 rounded bg-white ring-1 ring-[#a19c96] focus:outline-none focus:ring-2 focus:ring-[#8e8781] focus:border-transparent transition duration-500 ease-in-out hover:shadow-lg
     }
   }
