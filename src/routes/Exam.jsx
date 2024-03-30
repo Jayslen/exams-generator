@@ -23,7 +23,7 @@ export function Exam () {
 
   return (
     <main className="grid place-content-center">
-      <section className="grid grid-cols-[0.65fr,0.35fr] gap-1.5 w-full">
+      <section className="grid grid-cols-[0.65fr,0.35fr] max-w-5xl w-[1024px] bg-red-100">
         <div>
           <span className="font-bold text-[#5a5552] text-lg">
             Pregunta {`${currentQuestionIndex + 1} / ${CURRENT_EXAM.length}`}
