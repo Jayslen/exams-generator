@@ -43,4 +43,6 @@ Crear un .env file con los siguientes datos:
 ![App Screenshot](https://github.com/Jayslen/exams-generator/blob/master/images/screnshot-1.png)
 
 
+## Autor
 
+[Desarrollado por Jayslen Rojas Serrano](https://github.com/Jayslen)
