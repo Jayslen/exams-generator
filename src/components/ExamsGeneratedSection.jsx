@@ -7,9 +7,9 @@ export function ExamsGeneratedSection () {
 
   const removeExam = ({ id }) => {
     setSavedExams(savedExams.filter((exam) => exam.id !== id))
-    localStorage.setItem('exams', JSON.stringify(savedExams))
   }
 
+  // Save exams in local storage, the function above saved the previous state
   useEffect(() => {
     localStorage.setItem('exams', JSON.stringify(savedExams))
   }, [savedExams])
