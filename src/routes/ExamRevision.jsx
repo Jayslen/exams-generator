@@ -1,41 +1,47 @@
-import { useContext, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import { ReviewQuestionsContext } from '../context/ReviewQuestionsContext'
+import { useSaveReviewQuestion } from '../hooks/useSaveReviewQuestions'
 import { ReviewedQuestions } from '../components/ReviewedQuestionsComponent'
 import { LinkComponent } from '../components/LinkComponent'
+import { Button } from '../components/Buttons'
 
 export function ExamRevision () {
-  const { userAnswers, setUserAnswers } = useContext(ReviewQuestionsContext)
-  const { id } = useParams()
-
-  useEffect(() => {
-    // save the review questions in the local storage to keep the state
-    const EXAMS = JSON.parse(localStorage.getItem('exams'))
-    const currentExam = EXAMS.find((exam) => exam.id === id)
-
-    if (
-      userAnswers.length === 0 &&
-      Object.prototype.hasOwnProperty.call(currentExam, 'review')
-    ) {
-      setUserAnswers(currentExam.review)
-    }
-
-    if (userAnswers.length > 0) {
-      currentExam.review = userAnswers
-      localStorage.setItem(
-        'exams',
-        JSON.stringify([...EXAMS.filter((exam) => exam.id !== id), currentExam])
-      )
-    }
-  }, [])
+  const { userAnswers, id } = useSaveReviewQuestion()
   return (
-    <main>
+    <main className="relative">
       <header className="mb-4">
         <h1 className="text-7xl font-black">Revision del examen</h1>
       </header>
-      {userAnswers.map((value, index) => {
-        return <ReviewedQuestions key={index} questionData={value} />
-      })}
+      <form
+        onSubmit={(e) => {
+          e.preventDefault()
+          const answers = Object.fromEntries(new FormData(e.target))
+          for (const prop in answers) {
+            const { question, correctAnswer } = JSON.parse(answers[prop])
+            fetch('http://localhost:5000/submitForm', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                Accept: 'apllication/json'
+              },
+              body: JSON.stringify({
+                question,
+                answer: correctAnswer,
+                subject: 'Fundamentos del computador'
+              })
+            })
+              .then((res) => res.json())
+              .then((res) => console.log(res))
+          }
+        }}
+      >
+        {userAnswers.map((value, index) => {
+          return <ReviewedQuestions key={index} questionData={value} />
+        })}
+        <Button
+          text={'Enviar'}
+          type="submit"
+          tailwindStyles={'fixed top-[6.9rem] right-64 w-24 h-24 rounded-full'}
+        />
+      </form>
       <footer className="flex justify-end gap-2">
         <LinkComponent text={'Inicio'} linkTo="/" />
         <LinkComponent
