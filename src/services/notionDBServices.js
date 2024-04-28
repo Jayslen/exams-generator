@@ -1,5 +1,5 @@
-export function uploadNotionFlashCard ({ question, correctAnswer, subject }) {
-  fetch('http://localhost:5000/submitForm', {
+export async function uploadNotionFlashCard ({ question, correctAnswer, subject }) {
+  const data = await fetch('http://localhost:5000/submitForm', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -11,6 +11,7 @@ export function uploadNotionFlashCard ({ question, correctAnswer, subject }) {
       subject
     })
   })
+  return data.json()
 }
 
 export async function fetchNotionFlashCards () {
