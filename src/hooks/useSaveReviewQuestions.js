@@ -1,10 +1,25 @@
 import { useContext, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import { toast } from 'react-toastify'
 import { ReviewQuestionsContext } from '../context/ReviewQuestionsContext'
+import { uploadNotionFlashCard } from '../services/notionDBServices'
 
 export function useSaveReviewQuestion () {
   const { userAnswers, setUserAnswers } = useContext(ReviewQuestionsContext)
   const { id } = useParams()
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const { subject, ...answers } = Object.fromEntries(new FormData(e.target))
+    if (!answers || !subject) {
+      toast.error('Por favor llene el campo y seleccione las preguntas a subir')
+      return
+    }
+    for (const prop in answers) {
+      const { question, correctAnswer } = JSON.parse(answers[prop])
+      uploadNotionFlashCard({ question, correctAnswer, subject })
+    }
+  }
 
   useEffect(() => {
     // save the review questions in the local storage to keep the state
@@ -27,5 +42,5 @@ export function useSaveReviewQuestion () {
     }
   }, [])
 
-  return { userAnswers, id }
+  return { userAnswers, id, handleSubmit }
 }

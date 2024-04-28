@@ -9,12 +9,12 @@ const jsonParser = bodyParser.json()
 app.use(cors())
 
 const PORT = 5000
-const HOST = process.env.PORT || 'localhost'
+const HOST = 'localhost'
 
 const notion = new Client({ auth: 'secret_hTkSVkLmllhYqscNH5z6N8JE0keCxItA0kGcNUmFalp' })
 
 app.post('/submitForm', jsonParser, async (req, res) => {
-  const { question, answer, subject = 'Fundamentos del computador' } = req.body
+  const { question, answer, subject = 'otra' } = req.body
   try {
     await notion.pages.create({
       parent: {
@@ -49,7 +49,7 @@ app.post('/submitForm', jsonParser, async (req, res) => {
         }
       }
     })
-    res.json({ message: 'Page created succesfuly' })
+    res.status(200).json({ message: 'request created succesfuly' })
   } catch (e) {
     res.status(500).json({ error: e.message })
   }

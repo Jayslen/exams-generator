@@ -8,20 +8,19 @@ const jsonParser = bodyParser.json()
 
 app.use(cors())
 
-const PORT = 6000
-const HOST = process.env.PORT || 'localhost'
+const PORT = 5001
+const HOST = 'localhost'
 
 const notion = new Client({ auth: 'secret_hTkSVkLmllhYqscNH5z6N8JE0keCxItA0kGcNUmFalp' })
 
-app.get('/submitForm', jsonParser, async (req, res) => {
+app.get('/fetchFlashCards', jsonParser, async (req, res) => {
   try {
     const response = await notion.databases.query({
       database_id: '808d681ae6744cad983da09091c59a5f'
     })
-    console.log(response)
-    return res
-  } catch {
-    console.log('errir')
+    res.status(200).json(response)
+  } catch (e) {
+    res.status(500).json({ error: e.message })
   }
 })
 
