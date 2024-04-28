@@ -22,7 +22,7 @@ export function QuestionComponent ({
         disabled={isChecked}
         id={radioBtnId}
         value={value}
-        className={'peer hidden'}
+        className='peer hidden'
       />
       <label
         style={{
@@ -43,7 +43,7 @@ export function QuestionComponent ({
               ? 'transparent'
               : 'currentcolor'
         }}
-        className="flex items-center gap-3 border-[0.5px] peer-checked:bg-chicago-700 peer-checked:text-chicago-100 px-4 py-4 border-chicago-950 peer-checked:border-none rounded-full w-full font-Sans text-black text-md transition-colors duration-700 cursor-pointer"
+        className="flex items-center gap-3 border-[0.5px] peer-checked:bg-chicago-700 peer-checked:text-chicago-100 px-4 py-4 border-chicago-950 peer-checked:border-none rounded-full w-full font-Sans text-black text-md transition-colors duration-500 cursor-pointer"
         htmlFor={radioBtnId}
       >
         <span className="place-content-center grid bg-chicago-300 rounded-full w-12 h-12 aspect-square">
