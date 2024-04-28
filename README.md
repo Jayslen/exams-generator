@@ -16,6 +16,8 @@ Esta tiene la funcionalidad de generar preguntas a partir de un texto que el usu
 
 Para correr el proyecto en local:
 
+- Tener instalado nodejs.
+
 Crear un .env file con los siguientes datos:
 
 - Crear tu .env file con la tu api key de Gemini AI.
@@ -25,7 +27,7 @@ Crear un .env file con los siguientes datos:
 ```bash
   git clone https://github.com/Jayslen/exams-generator.git
   npm install
-  npm run dev
+  npm run start
 ```
 
 
