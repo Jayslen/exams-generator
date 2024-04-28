@@ -1,12 +1,15 @@
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { ReviewQuestionsContext } from '../context/ReviewQuestionsContext'
-import { uploadNotionFlashCard } from '../services/notionDBServices'
+import { uploadNotionFlashCard, fetchNotionFlashCards } from '../services/notionDBServices'
 
 export function useSaveReviewQuestion () {
   const { userAnswers, setUserAnswers } = useContext(ReviewQuestionsContext)
   const { id } = useParams()
+  const [notionQuestions, setNotionQuestions] = useState([])
+  const [submitCount, setSubmitCount] = useState(0)
+  let questionsExist = false
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -17,9 +20,31 @@ export function useSaveReviewQuestion () {
     }
     for (const prop in answers) {
       const { question, correctAnswer } = JSON.parse(answers[prop])
+      // check if the question already exists in the database
+      if (notionQuestions.some((value) => value.question === question)) {
+        questionsExist = true
+        continue
+      }
       uploadNotionFlashCard({ question, correctAnswer, subject })
+        .then(() => {
+          setSubmitCount(prev => prev + 1)
+          e.target.reset()
+          toast.success('Preguntas subida exitosamente')
+        })
+        .catch((err) => console.log(err))
+    }
+    if (questionsExist) {
+      toast.error('Una o más preguntas ya existen en la base de datos')
+      questionsExist = false
     }
   }
+
+  // fetch the flash cards from the database
+  useEffect(() => {
+    fetchNotionFlashCards()
+      .then((data) => setNotionQuestions(data))
+      .catch((err) => console.log(err))
+  }, [submitCount])
 
   useEffect(() => {
     // save the review questions in the local storage to keep the state
@@ -28,7 +53,7 @@ export function useSaveReviewQuestion () {
 
     if (
       userAnswers.length === 0 &&
-        Object.prototype.hasOwnProperty.call(currentExam, 'review')
+      Object.prototype.hasOwnProperty.call(currentExam, 'review')
     ) {
       setUserAnswers(currentExam.review)
     }
