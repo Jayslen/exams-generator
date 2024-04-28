@@ -1,8 +1,8 @@
 import { useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
-import { createPrompt } from '../services/generatePrompt'
-import { generateQuestions } from '../services/getQuestions'
+import { createPrompt } from '../scripts/generatePrompt'
+import { generateQuestions } from '../services/createQuestions'
 
 export function useGenerateQuestion () {
   const [examsQuestions, setExamsQuestions] = useState([])
