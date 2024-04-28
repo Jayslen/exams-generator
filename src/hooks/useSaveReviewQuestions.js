@@ -9,7 +9,6 @@ export function useSaveReviewQuestion () {
   const { id } = useParams()
   const [notionQuestions, setNotionQuestions] = useState([])
   const [submitCount, setSubmitCount] = useState(0)
-  let questionsExist = false
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -22,7 +21,6 @@ export function useSaveReviewQuestion () {
       const { question, correctAnswer } = JSON.parse(answers[prop])
       // check if the question already exists in the database
       if (notionQuestions.some((value) => value.question === question)) {
-        questionsExist = true
         continue
       }
       uploadNotionFlashCard({ question, correctAnswer, subject })
@@ -32,10 +30,6 @@ export function useSaveReviewQuestion () {
           toast.success('Preguntas subida exitosamente')
         })
         .catch((err) => console.log(err))
-    }
-    if (questionsExist) {
-      toast.error('Una o más preguntas ya existen en la base de datos')
-      questionsExist = false
     }
   }
 
@@ -67,5 +61,5 @@ export function useSaveReviewQuestion () {
     }
   }, [])
 
-  return { userAnswers, id, handleSubmit }
+  return { userAnswers, notionQuestions, id, handleSubmit }
 }
