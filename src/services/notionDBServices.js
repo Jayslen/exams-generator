@@ -15,5 +15,12 @@ export function uploadNotionFlashCard ({ question, correctAnswer, subject }) {
 
 export async function fetchNotionFlashCards () {
   const response = await fetch('http://localhost:5001/fetchFlashCards')
-  return response.json()
+  const data = await response.json()
+  return data.results.map((result) => {
+    return {
+      question: result.properties.Question.title[0].plain_text,
+      answer: result.properties.Answer.rich_text[0].plain_text,
+      subject: result.properties.Course.multi_select[0].name
+    }
+  })
 }
