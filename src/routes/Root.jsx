@@ -1,60 +1,25 @@
-import 'react-toastify/dist/ReactToastify.css'
-import { PromptInput } from '../components/PromptInput'
-import { Button } from '../components/Buttons'
-import { LoadingScreen } from '../components/LoadingScreen'
-import { useGenerateQuestion } from '../hooks/useGenerateQuestions'
-import { ExamsGeneratedSection } from '../components/ExamsGeneratedSection'
-
 export function Root () {
-  const { formGenerateQuestions, goToExam, loader } = useGenerateQuestion()
   return (
-    <main>
-      {loader && <LoadingScreen />}
+    <main className='text-center'>
       <header>
-        <h1 className="text-3xl font-black sm:text-4xl lg:text-5xl xl:text-7xl">
-          Practica generando generando tus examnes.
-        </h1>
-        <p className="text-xl my-4 sm:text-2xl lg:text-3xl xl:text-4xl">
-          Genera tus exames a partir de un tema en especifico o de tus notas
-          personales.
-        </p>
+        <h1 className='text-7xl font-black'>Student Focus Place</h1>
       </header>
-      <section className='grid md:grid-cols-[0.65fr,0.35fr] lg:grid-cols-[0.7fr,0.3fr] gap-6 py-4'>
-        <form
-          className="flex flex-col"
-          onSubmit={formGenerateQuestions}
-        >
-          <div className="flex flex-col md:grid md:grid-cols-2 gap-3">
-            <PromptInput
-              type={'text'}
-              title={'Titulo'}
-              placeholder={'Ej: Fundamentos de programación'}
-              name={'title'}
-            />
-            <PromptInput
-              type={'number'}
-              title={'Cantidad de preguntas'}
-              placeholder={'10'}
-              name={'amount'}
-            />
-          </div>
-          <label className="col-span-2 row-span-2 relative">
-            <span className="font-black text-xl font-Satoshi block my-2 lg:text-2xl">
-              Apuntes
-            </span>
-            <textarea
-              name="notes"
-              rows="15"
-              className="inputs resize-none"
-            ></textarea>
-          </label>
-          <footer className="flex flex-col md:flex-row gap-3 mt-4">
-            <Button text={'Generar Preguntas'} type={'submit'} />
-            <Button text={'Generar Examen'} handleClick={goToExam} />
-          </footer>
-        </form>
-        <ExamsGeneratedSection/>
-      </section>
+      <nav className='w-full flex justify-center gap-5 my-3 text-left'>
+        <LinkComponent link='/exam-generator' title={'Generador de examenes'} />
+        <LinkComponent title={'Revision de flashcards'} />
+
+      </nav>
     </main>
+  )
+}
+
+export function LinkComponent ({ link = '#', text, title }) {
+  return (
+    <a href={link}>
+      <div className='bg-chicago-950 text-white w-72 h-72 rounded px-4 py-2'>
+        <h3 className='text-xl font-black'>{title}</h3>
+        <p className='text-xl'></p>
+      </div>
+    </a>
   )
 }

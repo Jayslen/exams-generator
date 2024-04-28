@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import { Root } from './routes/Root.jsx'
 import { Exam } from './routes/Exam.jsx'
+import { ExamGenerator } from './routes/ExamGenerator.jsx'
 import { ExamRevision } from './routes/ExamRevision.jsx'
 import { ReviewQuestionsProvider } from './context/ReviewQuestionsContext.jsx'
 import './index.css'
@@ -12,6 +13,10 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <Root />
+  },
+  {
+    path: '/exam-generator',
+    element: <ExamGenerator />
   },
   {
     path: '/exam/:id',
@@ -26,8 +31,8 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ReviewQuestionsProvider>
-        <ToastContainer />
-        <RouterProvider router={router} />
+      <ToastContainer />
+      <RouterProvider router={router}/>
     </ReviewQuestionsProvider>
   </React.StrictMode>
 )
