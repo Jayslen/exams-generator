@@ -3,96 +3,103 @@
 @tailwind components;
 
 @layer components {
-    .inputs {
-      @apply w-full p-4 rounded bg-white ring-1 ring-[#a19c96] focus:outline-none focus:ring-2 focus:ring-[#8e8781] focus:border-transparent transition duration-500 ease-in-out hover:shadow-lg
-    }
+  .inputs {
+    @apply w-full p-4 rounded bg-white ring-1 ring-[#a19c96] focus:outline-none focus:ring-2 focus:ring-[#8e8781] focus:border-transparent transition duration-500 ease-in-out hover:shadow-lg;
   }
+}
 
-body{
-    background-color: #f6f5f5;
+body {
+  background-color: #f6f5f5;
 }
 main {
-    box-sizing: border-box;
-    margin: 0 25rem ;
-    padding-top: 1.35rem;
-
+  box-sizing: border-box;
+  margin: 0 25rem;
+  padding-top: 1.35rem;
 }
 
-h1, h2, h3, label {
-    font-family: 'Satoshi', sans-serif;
+h1,
+h2,
+h3,
+label {
+  font-family: 'Satoshi', sans-serif;
 }
-p,  input, textarea {
-    font-family: 'General Sans', sans-serif;
+p,
+input,
+textarea {
+  font-family: 'General Sans', sans-serif;
 }
 
-textarea{
-    overflow: auto;
-    scrollbar-color: #8e8781 transparent;
-    scrollbar-width: thin;
+textarea {
+  overflow: auto;
+  scrollbar-color: #8e8781 transparent;
+  scrollbar-width: thin;
 }
 
 .animationButton {
-    animation: click 200ms  ease-in-out;
+  animation: click 200ms ease-in-out;
 }
 
 .animation-modal {
-    animation: open 500ms ease forwards;
+  animation: open 250ms ease forwards;
 }
-
 .animation-modal-close {
-    animation: close 500ms ease forwards;
+  animation: close 250ms ease forwards;
 }
 
 @keyframes close {
-    0% {
-        transform: scale(1);
-    }
-    100% {
-        transform: scale(0);
-    }
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
 }
 
 @keyframes open {
-    0% {
-        transform: scale(0.4);
-    }
-    100% {
-        transform: scale(1);
-    }
+  0% {
+    transform: scale(0.4);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 @keyframes click {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(0.9);
-    }
-    100% {
-        transform: scale(1);
-    }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 @media (max-width: 1920px) {
-    main {
-        margin: 0 25rem;
-    }
+  main {
+    margin: 0 25rem;
+  }
 }
 
 @media (max-width: 1600px) {
-    main {
-        margin: 0 10rem;
-    }
+  main {
+    margin: 0 10rem;
+  }
 }
 
 @media (max-width: 1280px) {
-    main {
-        margin: 0 7rem;
-    }
+  main {
+    margin: 0 7rem;
+  }
 }
 
 @media (max-width: 640px) {
-    main {
-        margin: 0 1rem;
-    }
+  main {
+    margin: 0 1rem;
+  }
 }
