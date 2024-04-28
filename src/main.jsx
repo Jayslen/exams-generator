@@ -31,8 +31,19 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ReviewQuestionsProvider>
-      <ToastContainer />
-      <RouterProvider router={router}/>
+      <ToastContainer
+        position="top-center"
+        autoClose={1500}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+      <RouterProvider router={router} />
     </ReviewQuestionsProvider>
   </React.StrictMode>
 )
