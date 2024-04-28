@@ -33,10 +33,14 @@ Crear un .env file con los siguientes datos:
 
 ## Demo
 
-Insert gif or link to demo
+![App Screenshot](https://github.com/Jayslen/exams-generator/blob/master/images/project-gift.gif)
 
 
 # Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+0+Here)
+![App Screenshot](https://github.com/Jayslen/exams-generator/blob/master/images/screnshot-3.png)
+![App Screenshot](https://github.com/Jayslen/exams-generator/blob/master/images/screnshot-2.png)
+![App Screenshot](https://github.com/Jayslen/exams-generator/blob/master/images/screnshot-1.png)
+
+
 
