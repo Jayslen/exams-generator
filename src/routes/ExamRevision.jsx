@@ -4,7 +4,7 @@ import { LinkComponent } from '../components/LinkComponent'
 import { DetailsComponent } from '../components/DetailsComponent'
 
 export function ExamRevision () {
-  const { userAnswers, id, handleSubmit } = useSaveReviewQuestion()
+  const { userAnswers, id, handleSubmit, notionQuestions } = useSaveReviewQuestion()
   return (
     <main className="relative">
       <header className="mb-4">
@@ -16,7 +16,7 @@ export function ExamRevision () {
       >
         <DetailsComponent/>
         {userAnswers.map((value, index) => {
-          return <ReviewedQuestions key={index} questionData={value} />
+          return <ReviewedQuestions key={index} questionData={value} databaseQuestions={notionQuestions} />
         })}
       </form>
       <footer className="flex justify-end gap-2">
