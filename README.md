@@ -16,7 +16,7 @@ Esta tiene la funcionalidad de generar preguntas a partir de un texto que el usu
 
 Para correr el proyecto en local:
 
-- Tener instalado nodejs con la version v20.12.2 o adelante.
+- Tener instalado nodejs con la version v20.6 o mayor.
 
 Crear un .env file con los siguientes datos:
 
