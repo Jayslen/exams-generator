@@ -43,7 +43,7 @@ export function useGenerateQuestion () {
 
     setLoader((prev) => !prev)
 
-    generateQuestions({ prompt })
+    generateQuestions({ prompt, apiKey: import.meta.env.VITE_GOOGLE_API_KEY })
       .then((questions) => {
         let generatedExam
         if (questions.includes('`') || questions.includes('json')) {

@@ -11,14 +11,14 @@ app.use(cors())
 const PORT = 5000
 const HOST = 'localhost'
 
-const notion = new Client({ auth: 'secret_hTkSVkLmllhYqscNH5z6N8JE0keCxItA0kGcNUmFalp' })
+const notion = new Client({ auth: process.env.NOTION_API_KEY })
 
 app.post('/submitForm', jsonParser, async (req, res) => {
   const { question, answer, subject = 'otra' } = req.body
   try {
     await notion.pages.create({
       parent: {
-        database_id: '808d681ae6744cad983da09091c59a5f'
+        database_id: process.env.NOTION_DATABASE_ID
       },
       properties: {
         Question: {

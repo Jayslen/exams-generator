@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "server:createPage": "node ./server/create-notion-page-server.mjs",
-    "server:fetchData": "node ./server/fetch-flashcards-server.mjs",
+    "server:createPage": "node --env-file .env ./server/create-notion-page-server.mjs",
+    "server:fetchData": "node --env-file .env ./server/fetch-flashcards-server.mjs",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
