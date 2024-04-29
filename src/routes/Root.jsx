@@ -19,7 +19,7 @@ export function Root () {
       </header>
       <nav className='w-full flex flex-col justify-center gap-5 my-3 text-left md:flex-row'>
         <LinkComponent title={'Examenes'} link='/exam-generator' />
-        <LinkComponent title={'Flashcards'} link={flashcardLinkExists ? '/flashcard' : '#'} handleClick={() => {
+        <LinkComponent title={'Flashcards'} link={flashcardLinkExists ? '/flashcards' : '#'} handleClick={() => {
           if (!flashcardLinkExists) {
             toast.warn(!flashCards ? 'Cargando flashcards, por favor espera' : flashCards.length === 0 ? 'No hay flashcards disponibles' : 'Error al cargar flashcards')
           }
