@@ -24,7 +24,7 @@ Crear un .env file con los siguientes datos:
 - El secreto de integracion de notion.
 - Link de la base de datos de notion a usar.
 - De la siguiente forma.
-  ```bash
+```bash
   VITE_GOOGLE_API_KEY=1234
   NOTION_DATABASE_ID=11234
   NOTION_API_KEY=1234
