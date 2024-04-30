@@ -36,7 +36,7 @@ textarea {
 }
 
 .animationButton {
-  animation: click 200ms ease-in-out;
+  animation: click 300ms ease-in-out;
 }
 
 .animation-modal {
@@ -73,7 +73,7 @@ textarea {
     transform: scale(1);
   }
   50% {
-    transform: scale(0.9);
+    transform: scale(0.85);
   }
   100% {
     transform: scale(1);
