@@ -8,6 +8,7 @@ import { ExamGenerator } from './routes/ExamGenerator.jsx'
 import { ExamRevision } from './routes/ExamRevision.jsx'
 import { ReviewQuestionsProvider } from './context/ReviewQuestionsContext.jsx'
 import './index.css'
+import { FlashcardRoute } from './routes/Flashcard.jsx'
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
   {
     path: '/review/:id',
     element: <ExamRevision />
+  },
+  {
+    path: '/flashcards',
+    element: <FlashcardRoute />
   }
 ])
 

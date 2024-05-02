@@ -1,0 +1,92 @@
+[
+  {
+    "question": "¿Qué es el pseudocódigo?",
+    "answer": "Un lenguaje intermedio entre el español y el lenguaje de programación",
+    "subject": "Introduccion a la elaboracion de algoritmos",
+    "color": "orange"
+  },
+  {
+    "question": "¿Qué es la programación?",
+    "answer": "El proceso de crear software",
+    "subject": "Introduccion a la elaboracion de algoritmos",
+    "color": "orange"
+  },
+  {
+    "question": "¿Cuál de los siguientes NO era un elemento distintivo del feudalismo?",
+    "answer": "Centralización del gobierno",
+    "subject": "Historia universal",
+    "color": "blue"
+  },
+  {
+    "question": "La base del sistema feudal era la relación entre:",
+    "answer": "El señor feudal y el vasallo",
+    "subject": "Historia universal",
+    "color": "blue"
+  },
+  {
+    "question": "¿Qué hace un hipervisor?",
+    "answer": "Permite que las VM accedan a los componentes de hardware del equipo físico",
+    "subject": "Fundamentos del computador",
+    "color": "green"
+  },
+  {
+    "question": "¿Cuál es la principal ventaja de la virtualización?",
+    "answer": "Permite ejecutar múltiples sistemas operativos en un solo equipo",
+    "subject": "Fundamentos del computador",
+    "color": "green"
+  },
+  {
+    "question": "¿Cuál de los siguientes es un problema asociado con la implementación tradicional de servidores?",
+    "answer": "Todos los anteriores",
+    "subject": "Fundamentos del computador",
+    "color": "green"
+  },
+  {
+    "question": "¿Qué es un algoritmo?",
+    "answer": "Un conjunto de instrucciones para resolver un problema",
+    "subject": "Introduccion a la elaboracion de algoritmos",
+    "color": "orange"
+  },
+  {
+    "question": "¿Cuál es la diferencia entre compilador e intérprete?",
+    "answer": "Un compilador traduce todo el programa a lenguaje máquina antes de ejecutarlo, mientras que un intérprete lo traduce y ejecuta línea por línea",
+    "subject": "Introduccion a la elaboracion de algoritmos",
+    "color": "orange"
+  },
+  {
+    "question": "¿Cuál fue el primer lenguaje de programación?",
+    "answer": "Fortran",
+    "subject": "Historia de la programación",
+    "color": "blue"
+  },
+  {
+    "question": "¿Qué es un bucle?",
+    "answer": "Una estructura de control que permite repetir un bloque de código varias veces",
+    "subject": "Programación estructurada",
+    "color": "blue"
+  },
+  {
+    "question": "¿Qué es un puntero?",
+    "answer": "Una variable que almacena la dirección de memoria de otra variable",
+    "subject": "Programación en C",
+    "color": "blue"
+  },
+  {
+    "question": "¿Qué es un objeto en programación orientada a objetos?",
+    "answer": "Una instancia de una clase que tiene propiedades y métodos",
+    "subject": "Programación orientada a objetos",
+    "color": "green"
+  },
+  {
+    "question": "¿Cuál es el principio de encapsulamiento?",
+    "answer": "Ocultar los detalles internos de un objeto y solo exponer una interfaz para interactuar con él",
+    "subject": "Programación orientada a objetos",
+    "color": "green"
+  },
+  {
+    "question": "¿Qué es la herencia en programación orientada a objetos?",
+    "answer": "Un mecanismo que permite que una clase herede propiedades y métodos de otra clase",
+    "subject": "Programación orientada a objetos",
+    "color": "green"
+  }
+]
