@@ -21,7 +21,9 @@ export async function fetchNotionFlashCards () {
     return {
       question: result.properties.Question.title[0].plain_text,
       answer: result.properties.Answer.rich_text[0].plain_text,
-      subject: result.properties.Course.multi_select[0].name
+      subject: result.properties.Course.multi_select[0].name,
+      color: result.properties.Course.multi_select[0].color,
+      id: result.id
     }
   })
 }
