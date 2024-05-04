@@ -12,7 +12,6 @@ const PORT = 5000
 const HOST = 'localhost'
 
 const notion = new Client({ auth: process.env.NOTION_API_KEY })
-
 app.post('/submitForm', jsonParser, async (req, res) => {
   const { question, answer, subject = 'otra' } = req.body
   try {
@@ -46,6 +45,10 @@ app.post('/submitForm', jsonParser, async (req, res) => {
               name: subject
             }
           ]
+        },
+        Date: {
+          type: 'date',
+          date: { start: new Date(), end: null, time_zone: null }
         }
       }
     })
