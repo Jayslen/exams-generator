@@ -23,6 +23,7 @@ export async function fetchNotionFlashCards () {
       answer: result.properties.Answer.rich_text[0].plain_text,
       subject: result.properties.Course.multi_select[0].name,
       color: result.properties.Course.multi_select[0].color,
+      date: result.properties.Date.date.start,
       id: result.id
     }
   })
