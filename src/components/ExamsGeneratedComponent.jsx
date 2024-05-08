@@ -1,8 +1,8 @@
 import { useState } from 'react'
+import { toast } from 'react-toastify'
 import { DeleteIcon } from '../assets/Icons'
 import { LinkComponent } from './LinkComponent'
 import { ModalComponent } from './ModalComponent'
-import { toast } from 'react-toastify'
 import { ANIMATION_TIME } from '../constants/animation-time'
 
 export function ExamGenerated ({ title = 'Examen sin nombre', amount, hasRevision, id, removeItemAction }) {
@@ -27,7 +27,7 @@ export function ExamGenerated ({ title = 'Examen sin nombre', amount, hasRevisio
           closeModal={closModal}
         />
       )}
-      <li className="w-full h-auto bg-chicago-100 rounded px-4 py-2 list-none relative">
+      <li style={{ '--hover-color': '#d3d0ce' }} className='w-full h-auto border border-black rounded px-4 py-2 list-none relative group hover-animation'>
         <h3 className="font-black text-lg grow">{title}</h3>
         <p className="text-chicago-950 italic font-medium">Cantidad de preguntas: {amount}</p>
         <div className="flex flex-col gap-0.5 xl:gap-2 xl:flex-row">

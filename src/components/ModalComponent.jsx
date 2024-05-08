@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { Button } from './Buttons'
+import { ANIMATION_TIME } from '../constants/animation-time'
 
 export function ModalComponent ({
   title,
@@ -15,14 +16,18 @@ export function ModalComponent ({
 
   const confirmAction = () => {
     articleRef.current.classList.toggle('animation-modal-close')
-    closeModal()
-    confirmBtnAction()
+    setTimeout(() => {
+      closeModal()
+      confirmBtnAction()
+    }, ANIMATION_TIME)
   }
 
   const declineAction = () => {
     articleRef.current.classList.toggle('animation-modal-close')
-    closeModal()
-    declineBtnAction()
+    setTimeout(() => {
+      closeModal()
+      declineBtnAction()
+    }, ANIMATION_TIME)
   }
 
   // execute the function when keydown event is triggered
@@ -57,6 +62,7 @@ export function ModalComponent ({
             tailwindStyles={
               'bg-red-600 hover:bg-red-900 text-chicago-50 text-left'
             }
+            hasAnimation={false}
           />
           <Button
             handleClick={declineAction}
@@ -64,6 +70,7 @@ export function ModalComponent ({
             tailwindStyles={
               'bg-chicago-600 hover:bg-chicago-900 text-chicago-50 text-left'
             }
+            hasAnimation={false}
           />
         </div>
       </article>
