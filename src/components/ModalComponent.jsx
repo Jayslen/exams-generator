@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { Button } from './Buttons'
-import { ANIMATION_TIME } from '../constants/animation-time'
+import { ANIMATION_TIME } from '../utils/all-constanst'
 
 export function ModalComponent ({
   title,

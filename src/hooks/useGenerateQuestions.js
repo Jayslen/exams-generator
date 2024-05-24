@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
-import { createPrompt } from '../scripts/generatePrompt'
+import { createPrompt } from '../utils/generatePrompt'
 import { generateQuestions } from '../services/createQuestions'
 
 export function useGenerateQuestion () {

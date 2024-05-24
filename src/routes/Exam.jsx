@@ -4,7 +4,6 @@ import { useManageForm } from '../hooks/useManageForm'
 import { Button } from '../components/Buttons'
 import { QuestionComponent } from '../components/QuestionComponent'
 import { ModalComponent } from '../components/ModalComponent'
-import { ANIMATION_TIME } from '../constants/animation-time'
 
 export function Exam () {
   const { id } = useParams()
@@ -24,9 +23,7 @@ export function Exam () {
   } = useManageForm({ id })
   const [openModal, setOpenModal] = useState(Boolean(CURRENT_PROGRESS))
   const closModal = () => {
-    setTimeout(() => {
-      setOpenModal((prev) => !prev)
-    }, ANIMATION_TIME)
+    setOpenModal((prev) => !prev)
   }
 
   const ANSWER_MESSAGE = CURRENT_ANSWER_IS_CORRECT

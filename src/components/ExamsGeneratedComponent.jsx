@@ -3,7 +3,7 @@ import { toast } from 'react-toastify'
 import { DeleteIcon } from '../assets/Icons'
 import { LinkComponent } from './LinkComponent'
 import { ModalComponent } from './ModalComponent'
-import { ANIMATION_TIME } from '../constants/animation-time'
+import { ANIMATION_TIME } from '../utils/all-constanst'
 
 export function ExamGenerated ({ title = 'Examen sin nombre', amount, hasRevision, id, removeItemAction }) {
   const [openModal, setOpenModal] = useState()
