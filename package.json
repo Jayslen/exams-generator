@@ -6,11 +6,12 @@
   "scripts": {
     "server:createPage": "node --env-file .env ./server/create-notion-page-server.mjs",
     "server:fetchData": "node --env-file .env ./server/fetch-flashcards-server.mjs",
+    "server:updatePage": "node --env-file .env ./server/edit-page-server.mjs",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "start": "npm-run-all --parallel dev server:fetchData server:createPage"
+    "start": "npm-run-all --parallel dev server:fetchData server:createPage server:updatePage"
   },
   "dependencies": {
     "@google/generative-ai": "^0.2.1",

@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { generateQuestions } from '../services/createQuestions'
 import { clearAsideSection, setAsideElements } from '../utils/aside-section-scripts'
-
+import { DATE_MILISECONDS, MILLISECONDS_IN_A_DAY } from '../utils/all-constanst'
+import { updateNotionCard } from '../services/notionDBServices'
 const [currentDay, currentMonth] = [
   new Date().getDate(),
   new Date().getMonth() + 1
@@ -42,6 +43,8 @@ export function useStudyCards ({ selectedSubjectCards }) {
     })
     setShowAnswer((prev) => !prev)
     clearAsideSection()
+    const date = new Date(DATE_MILISECONDS + (MILLISECONDS_IN_A_DAY * 2)).toISOString()
+    updateNotionCard({ pageId: currentCard.id, date })
   }
 
   const generateExtraInfo = () => {

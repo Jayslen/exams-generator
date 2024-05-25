@@ -29,3 +29,14 @@ export async function fetchNotionFlashCards () {
     }
   })
 }
+
+export async function updateNotionCard ({ pageId, date }) {
+  await fetch('http://localhost:5002/updateCardData', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'apllication/json'
+    },
+    body: JSON.stringify({ pageId, date })
+  })
+}
