@@ -1,92 +1,98 @@
 [
   {
+    "question": "¿Cuál de las siguientes es la primera fase en el proceso de programación?",
+    "answer": "Análisis de requisitos",
+    "subject": "Algoritmos",
+    "color": "red",
+    "date": "2024-05-14T17:20:00.000+00:00",
+    "id": "7a83ec08-c404-49ba-bdd4-24a8f0795292"
+  },
+  {
+    "question": "¿Qué es un lenguaje de programación de alto nivel?",
+    "answer": "Un lenguaje que es fácil de entender para los humanos",
+    "subject": "Algoritmos",
+    "color": "red",
+    "date": "2024-05-14T17:20:00.000+00:00",
+    "id": "201f4500-57c4-44cb-b170-064adb616578"
+  },
+  {
+    "question": "¿Cuál de las siguientes NO es un tipo de lenguaje de programación?",
+    "answer": "Pseudocódigo",
+    "subject": "Algoritmos",
+    "color": "red",
+    "date": "2024-05-11T17:20:00.000+00:00",
+    "id": "88f2669f-ee55-4d92-b496-f8c4008d57a6"
+  },
+  {
+    "question": "¿Cuál de las siguientes es una herramienta de programación?",
+    "answer": "Todas las anteriores",
+    "subject": "Algoritmos",
+    "color": "red",
+    "date": "2024-05-02T17:20:00.000+00:00",
+    "id": "5f01cdab-60a2-4487-8a77-967ecba4cd90"
+  },
+  {
     "question": "¿Qué es el pseudocódigo?",
     "answer": "Un lenguaje intermedio entre el español y el lenguaje de programación",
-    "subject": "Introduccion a la elaboracion de algoritmos",
-    "color": "orange"
+    "subject": "Algoritmos",
+    "color": "red",
+    "date": "2024-05-03T17:20:00.000+00:00",
+    "id": "e8a5aa63-2eae-4905-aa4b-4a6e78c2d261"
+  },
+  {
+    "question": "¿Qué es un algoritmo?",
+    "answer": "Una lista de pasos para resolver un problema",
+    "subject": "Algoritmos",
+    "color": "red",
+    "date": "2024-04-11T17:20:00.000+00:00",
+    "id": "abf91055-2cd3-4f22-9f43-a4e15424fc78"
   },
   {
     "question": "¿Qué es la programación?",
     "answer": "El proceso de crear software",
-    "subject": "Introduccion a la elaboracion de algoritmos",
-    "color": "orange"
+    "subject": "Algoritmos",
+    "color": "red",
+    "date": "2024-06-11T17:20:00.000+00:00",
+    "id": "d724c750-c79b-43d6-b790-aa20c1e14b2f"
   },
   {
-    "question": "¿Cuál de los siguientes NO era un elemento distintivo del feudalismo?",
-    "answer": "Centralización del gobierno",
-    "subject": "Historia universal",
-    "color": "blue"
+    "question": "¿Qué es un lenguaje de programación?",
+    "answer": "Un conjunto de reglas para dar instrucciones a ordenadores",
+    "subject": "Algoritmos",
+    "color": "red",
+    "date": "2024-05-07T17:20:00.000+00:00",
+    "id": "140bf3d0-ce50-4edd-998c-96725eadcbda"
   },
   {
-    "question": "La base del sistema feudal era la relación entre:",
-    "answer": "El señor feudal y el vasallo",
-    "subject": "Historia universal",
-    "color": "blue"
-  },
-  {
-    "question": "¿Qué hace un hipervisor?",
-    "answer": "Permite que las VM accedan a los componentes de hardware del equipo físico",
+    "question": "¿Cuál es la función principal de una fuente de alimentación?",
+    "answer": "Convertir corriente alterna en corriente directa",
     "subject": "Fundamentos del computador",
-    "color": "green"
+    "color": "yellow",
+    "date": "2024-05-11T14:48:00.000+00:00",
+    "id": "f8703d43-5891-4276-b66f-b915da79649e"
   },
   {
-    "question": "¿Cuál es la principal ventaja de la virtualización?",
-    "answer": "Permite ejecutar múltiples sistemas operativos en un solo equipo",
+    "question": "¿Qué factor debe considerarse al seleccionar un gabinete?",
+    "answer": "Todas las anteriores",
     "subject": "Fundamentos del computador",
-    "color": "green"
+    "color": "yellow",
+    "date": "2024-05-11T14:48:00.000+00:00",
+    "id": "3411f954-ae8d-4017-8f13-6cca5aca627e"
   },
   {
-    "question": "¿Cuál de los siguientes es un problema asociado con la implementación tradicional de servidores?",
-    "answer": "Todos los anteriores",
+    "question": "Según el texto, ¿cuál es una precaución de seguridad importante al trabajar con componentes de computadora?",
+    "answer": " Tener una pulsera antiestática",
     "subject": "Fundamentos del computador",
-    "color": "green"
+    "color": "yellow",
+    "date": "2024-05-10T20:52:00.000+00:00",
+    "id": "2dc59cce-ee83-44d2-a6b1-dfc50cedf920"
   },
   {
-    "question": "¿Qué es un algoritmo?",
-    "answer": "Un conjunto de instrucciones para resolver un problema",
-    "subject": "Introduccion a la elaboracion de algoritmos",
-    "color": "orange"
-  },
-  {
-    "question": "¿Cuál es la diferencia entre compilador e intérprete?",
-    "answer": "Un compilador traduce todo el programa a lenguaje máquina antes de ejecutarlo, mientras que un intérprete lo traduce y ejecuta línea por línea",
-    "subject": "Introduccion a la elaboracion de algoritmos",
-    "color": "orange"
-  },
-  {
-    "question": "¿Cuál fue el primer lenguaje de programación?",
-    "answer": "Fortran",
-    "subject": "Historia de la programación",
-    "color": "blue"
-  },
-  {
-    "question": "¿Qué es un bucle?",
-    "answer": "Una estructura de control que permite repetir un bloque de código varias veces",
-    "subject": "Programación estructurada",
-    "color": "blue"
-  },
-  {
-    "question": "¿Qué es un puntero?",
-    "answer": "Una variable que almacena la dirección de memoria de otra variable",
-    "subject": "Programación en C",
-    "color": "blue"
-  },
-  {
-    "question": "¿Qué es un objeto en programación orientada a objetos?",
-    "answer": "Una instancia de una clase que tiene propiedades y métodos",
-    "subject": "Programación orientada a objetos",
-    "color": "green"
-  },
-  {
-    "question": "¿Cuál es el principio de encapsulamiento?",
-    "answer": "Ocultar los detalles internos de un objeto y solo exponer una interfaz para interactuar con él",
-    "subject": "Programación orientada a objetos",
-    "color": "green"
-  },
-  {
-    "question": "¿Qué es la herencia en programación orientada a objetos?",
-    "answer": "Un mecanismo que permite que una clase herede propiedades y métodos de otra clase",
-    "subject": "Programación orientada a objetos",
-    "color": "green"
+    "question": "¿Dónde se instala la fuente de alimentación en el case?",
+    "answer": "En la parte trasera",
+    "subject": "Fundamentos del computador",
+    "color": "yellow",
+    "date": "2024-05-10T20:52:00.000+00:00",
+    "id": "74e0fdbd-95a5-4e09-b1e3-7fd0f2abfbc6"
   }
 ]

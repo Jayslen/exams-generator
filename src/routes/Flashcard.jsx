@@ -1,27 +1,13 @@
 import { useEffect, useState } from 'react'
 import { StudyFlashcardComponent } from '../components/StudyFlashcardComponent'
 import { fetchNotionFlashCards } from '../services/notionDBServices'
-import { animationBtn } from '../scripts/animation-button'
+import { animationBtn } from '../utils/animation-button'
 import coolors from 'tailwindcss/colors'
-import data from '../mocks/flashcardsQuestions.json'
+// import data from '../mocks/flashcardsQuestions.json'
 
 export function FlashcardRoute () {
-  const [flashcards, setFlashCards] = useState(data)
+  const [flashcards, setFlashCards] = useState([])
   const [selectedSubjectCards, setSelectedSubjectCards] = useState([])
-  const [showAnswer, setShowAnswer] = useState(false)
-  const [index, setIndex] = useState(0)
-
-  const handleShowAnswer = () => {
-    setShowAnswer(!showAnswer)
-  }
-
-  const handleNextCard = () => {
-    if (index < selectedSubjectCards.length - 1) {
-      setIndex(index + 1)
-    } else {
-      setIndex(0)
-    }
-  }
 
   const subjects = [
     ...new Set(
@@ -37,18 +23,14 @@ export function FlashcardRoute () {
   })
 
   useEffect(() => {
-    setShowAnswer(false)
-  }, [index])
-
-  //   useEffect(() => {
-  //     fetchNotionFlashCards()
-  //       .then((data) => {
-  //         setFlashCards(data)
-  //       })
-  //       .catch((error) => {
-  //         console.error(error)
-  //       })
-  //   }, [])
+    fetchNotionFlashCards()
+      .then((data) => {
+        setFlashCards(data)
+      })
+      .catch((error) => {
+        console.error(error)
+      })
+  }, [])
   return (
     <main>
       <h1 className="font-black text-7xl">Estudio de Flahscards.</h1>
@@ -75,12 +57,7 @@ export function FlashcardRoute () {
         })}
       </ul>
       {selectedSubjectCards.length !== 0 && (
-        <StudyFlashcardComponent
-          showAnswer={showAnswer}
-          currentCard={selectedSubjectCards[index]}
-          handleShowAnswer={handleShowAnswer}
-          selectedSubjectCards={selectedSubjectCards}
-          handleNexCard={handleNextCard}
+        <StudyFlashcardComponent selectedSubjectCards={selectedSubjectCards}
         />
       )}
     </main>
