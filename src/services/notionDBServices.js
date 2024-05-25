@@ -24,6 +24,7 @@ export async function fetchNotionFlashCards () {
       subject: result.properties.Course.multi_select[0].name,
       color: result.properties.Course.multi_select[0].color,
       date: result.properties.Date.date.start,
+      text: result.properties.Text.rich_text.map((item) => item.plain_text).join(' '),
       id: result.id
     }
   })
