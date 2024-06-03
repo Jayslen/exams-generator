@@ -138,8 +138,10 @@ export function useManageForm ({ id }) {
   useEffect(() => {
     const handleKeyPress = (e) => {
       if ((e.key !== 'Enter' && isNaN(e.key)) || +e.key > 4) return
+
       const $formOptions = Array.from(document.querySelector('form').children)
       $formOptions.pop()
+
       if (e.key === 'Enter') {
         const { userAnswer } = Object.fromEntries(new FormData(document.querySelector('form')))
         submitAnswer({ userAnswer, resetInputs: () => document.querySelector('form').reset() })
@@ -148,6 +150,7 @@ export function useManageForm ({ id }) {
 
       $formOptions.forEach((elm, index) => {
         const [$input] = elm.children
+        if (!$input || $input.disabled) return
         if (index === +e.key - 1) {
           $input.checked = true
         }
