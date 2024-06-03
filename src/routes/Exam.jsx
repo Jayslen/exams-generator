@@ -42,9 +42,9 @@ export function Exam () {
         <ModalComponent
           title={'Progreso guardado encontrado.'}
           firstText={'Desea contiar con el progreso pasado o empezar desde cero:'}
-          confirmBtnText={'Borrar progreso'}
-          confirmBtnAction={clearExamProgress}
-          declineBtnText={'Continuar'}
+          declineBtnText={'Borrar progreso'}
+          declineBtnAction={clearExamProgress}
+          confirmBtnText={'Continuar'}
           closeModal={closModal}
         />
       )}
@@ -59,7 +59,7 @@ export function Exam () {
           </h1>
         </div>
 
-        <form className="flex flex-col gap-3 relative" onSubmit={handleSubmit}>
+        <form className="flex flex-col gap-3 relative" onSubmit={handleSubmit} >
           {(CURRENT_ANSWER_IS_CORRECT || CURRENT_ANSWER_IS_WRONG) && (
             <p className="font-bold italic text-lg absolute -top-10 left-4">
               {ANSWER_MESSAGE}

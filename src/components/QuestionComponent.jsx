@@ -18,7 +18,7 @@ export function QuestionComponent ({
     <div className="relative flex items-center w-full">
       <input
         type="radio"
-        name="exam"
+        name="userAnswer"
         disabled={isChecked}
         id={radioBtnId}
         value={value}

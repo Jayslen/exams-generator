@@ -83,10 +83,8 @@ export function useManageForm ({ id }) {
     )
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    const { exam } = Object.fromEntries(new FormData(e.target))
-
+  // submit the answer and go to the next question
+  const submitAnswer = ({ userAnswer, resetInputs }) => {
     // go to the review page if the last question is answered
     if (currentQuestionIndex === CURRENT_EXAM.length - 1 && currentAnswer) {
       window.localStorage.setItem(
@@ -115,19 +113,49 @@ export function useManageForm ({ id }) {
       setcurrentQuestionIndex((prev) => prev + 1)
       setcurrentAnswer(null)
       setIsChecked((prev) => !prev)
-      e.target.reset()
+      resetInputs()
       return
     }
 
-    if (!exam) {
+    if (!userAnswer) {
       toast.error('Debes seleccionar una respuesta')
       return
     }
     // check the answer
-    setcurrentAnswer(exam)
-    updateUsersAnswers({ userAnswer: exam })
+    setcurrentAnswer(userAnswer)
+    updateUsersAnswers({ userAnswer })
     setIsChecked((prev) => !prev)
   }
+
+  // handle the submit event to submit the answer
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const { userAnswer } = Object.fromEntries(new FormData(e.target))
+    submitAnswer({ userAnswer, resetInputs: () => e.target.reset() })
+  }
+
+  // handle the keyup event to select the answer
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      if ((e.key !== 'Enter' && isNaN(e.key)) || +e.key > 4) return
+      const $formOptions = Array.from(document.querySelector('form').children)
+      $formOptions.pop()
+      if (e.key === 'Enter') {
+        const { userAnswer } = Object.fromEntries(new FormData(document.querySelector('form')))
+        submitAnswer({ userAnswer, resetInputs: () => document.querySelector('form').reset() })
+        return
+      }
+
+      $formOptions.forEach((elm, index) => {
+        const [$input] = elm.children
+        if (index === +e.key - 1) {
+          $input.checked = true
+        }
+      })
+    }
+    window.addEventListener('keyup', handleKeyPress)
+    return () => window.removeEventListener('keyup', handleKeyPress)
+  })
   return {
     currentQuestionIndex,
     currentAnswer,
