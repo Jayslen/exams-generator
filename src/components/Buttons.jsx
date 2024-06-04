@@ -12,7 +12,7 @@ export function Button ({
   return (
     <button
       style={{ '--hover-color': '#282624' }}
-      className={`z-20 py-3 px-5 rounded font-Satoshi transition-all duration-300 border overflow-hidden hover:text-chicago-100 relative disabled:cursor-not-allowed disabled:bg-chicago-200 disabled:hover:text-current ${tailwindStyles} ${hasAnimation ? 'hover-animation' : 'bg-chicago-300 hover:bg-chicago-600'}`}
+      className={`py-3 px-5 rounded font-Satoshi transition-all duration-300 border overflow-hidden hover:text-chicago-100 relative disabled:cursor-not-allowed disabled:bg-chicago-200 disabled:hover:text-current ${tailwindStyles} ${hasAnimation ? 'hover-animation' : 'bg-chicago-300 hover:bg-chicago-600'}`}
       type={type}
       disabled={isDisabled}
       onClick={(e) => {
