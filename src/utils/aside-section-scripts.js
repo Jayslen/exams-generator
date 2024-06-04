@@ -43,8 +43,6 @@ export function setAsideElements ({ text }) {
     const $asideChildren = Array.from($aside.children)
     const $lastElement = arr[index - 1]
 
-    console.dir({ prev: $lastElement, current: element.htmlTag })
-
     if (element.htmlTag === 'li' && $lastElement.htmlTag !== 'li') {
       const $ul = document.createElement('ul')
       const $li = document.createElement('li')
