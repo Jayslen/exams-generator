@@ -1,16 +1,4 @@
-import { useEffect, useState } from 'react'
-import { fetchNotionFlashCards } from '../services/notionDBServices'
-import { toast } from 'react-toastify'
-
 export function Root () {
-  const [flashCards, setFlashCards] = useState(null)
-  const flashcardLinkExists = flashCards?.length > 0
-  useEffect(() => {
-    fetchNotionFlashCards().then((data) => {
-      setFlashCards(data)
-    })
-  }, [])
-
   return (
     <main className='h-screen grid place-content-center text-center'>
       <header>
@@ -19,11 +7,7 @@ export function Root () {
       </header>
       <nav className='w-full flex flex-col justify-center gap-5 my-3 text-left md:flex-row'>
         <LinkComponent title={'Examenes'} link='/exam-generator' />
-        <LinkComponent title={'Flashcards'} link={flashcardLinkExists ? '/flashcards' : '#'} handleClick={() => {
-          if (!flashcardLinkExists) {
-            toast.warn(!flashCards ? 'Cargando flashcards, por favor espera' : flashCards.length === 0 ? 'No hay flashcards disponibles' : 'Error al cargar flashcards')
-          }
-        }} />
+        <LinkComponent title={'Flashcards'} link={'/flashcards'} />
       </nav>
     </main>
   )

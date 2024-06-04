@@ -7,8 +7,8 @@ import { Exam } from './routes/Exam.jsx'
 import { ExamGenerator } from './routes/ExamGenerator.jsx'
 import { ExamRevision } from './routes/ExamRevision.jsx'
 import { ReviewQuestionsProvider } from './context/ReviewQuestionsContext.jsx'
-import './index.css'
 import { FlashcardRoute } from './routes/Flashcard.jsx'
+import './index.css'
 
 const router = createBrowserRouter([
   {

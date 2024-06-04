@@ -7,7 +7,6 @@ import { ExamsGeneratedSection } from '../components/ExamsGeneratedSection'
 
 export function ExamGenerator () {
   const { formGenerateQuestions, goToExam, loader } = useGenerateQuestion()
-  console.log()
   return (
     <main>
       {loader && <LoadingScreen />}

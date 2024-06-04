@@ -1,28 +1,5 @@
-export function SvgSpinners270RingWithBg (props) {
+export function LoaderSvg ({ props }) {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="58"
-      height="58"
-      viewBox="0 0 24 24"
-    >
-      <path
-        fill="#f6f5f5"
-        d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,19a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"
-        opacity=".25"
-      />
-      <path
-        fill="#f6f5f5"
-        d="M10.72,19.9a8,8,0,0,1-6.5-9.79A7.77,7.77,0,0,1,10.4,4.16a8,8,0,0,1,9.49,6.52A1.54,1.54,0,0,0,21.38,12h.13a1.37,1.37,0,0,0,1.38-1.54,11,11,0,1,0-12.7,12.39A1.54,1.54,0,0,0,12,21.34h0A1.47,1.47,0,0,0,10.72,19.9Z"
-      >
-        <animateTransform
-          attributeName="transform"
-          dur="0.75s"
-          repeatCount="indefinite"
-          type="rotate"
-          values="0 12 12;360 12 12"
-        />
-      </path>
-    </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="58" height="58" viewBox="0 0 24 24" {...props}><circle cx="4" cy="12" r="3" fill="currentColor"><animate id="IconifyId18fe411109ea82252113" attributeName="r" begin="0;IconifyId18fe411109ea82252114.end-0.25s" dur="0.75s" values="3;.2;3"/></circle><circle cx="12" cy="12" r="3" fill="currentColor"><animate attributeName="r" begin="IconifyId18fe411109ea82252113.end-0.6s" dur="0.75s" values="3;.2;3"/></circle><circle cx="20" cy="12" r="3" fill="currentColor"><animate id="IconifyId18fe411109ea82252114" attributeName="r" begin="IconifyId18fe411109ea82252113.end-0.45s" dur="0.75s" values="3;.2;3"/></circle></svg>
   )
 }

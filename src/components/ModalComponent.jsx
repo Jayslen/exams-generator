@@ -57,21 +57,21 @@ export function ModalComponent ({
         {secondText && <p>{secondText}</p>}
         <div className="grid grid-cols-2 gap-2 mt-2">
           <Button
-            handleClick={confirmAction}
-            text={confirmBtnText}
+            handleClick={declineAction}
+            text={declineBtnText}
             tailwindStyles={
               'bg-red-600 hover:bg-red-900 text-chicago-50 text-left'
             }
             hasAnimation={false}
           />
-          <Button
-            handleClick={declineAction}
-            text={declineBtnText}
-            tailwindStyles={
-              'bg-chicago-600 hover:bg-chicago-900 text-chicago-50 text-left'
-            }
-            hasAnimation={false}
-          />
+            <Button
+              handleClick={confirmAction}
+              text={confirmBtnText}
+              tailwindStyles={
+                'bg-chicago-600 hover:bg-chicago-900 text-chicago-50 text-left'
+              }
+              hasAnimation={false}
+            />
         </div>
       </article>
     </div>

@@ -31,9 +31,7 @@ export function DetailsComponent () {
             <Button text={'Todas'} tailwindStyles={'w-full'} handleClick={() => {
               const $inputs = Array.from(document.querySelectorAll('input[type="checkbox"]'))
               $inputs.forEach(($elm) => {
-                if ($elm.disabled === true) {
-                  $elm.checked = false
-                } else {
+                if (!$elm.disabled) {
                   $elm.checked = true
                 }
               })
