@@ -1,6 +1,6 @@
 import { toast } from 'react-toastify'
 import { CheckIcon, XIcon } from '../assets/Icons'
-import { useId } from 'react'
+import { useEffect, useId } from 'react'
 
 export function ReviewedQuestions ({ questionData, databaseQuestions }) {
   const { question, options, isCorrect, userAnswer, correctAnswer = null } = questionData
@@ -13,8 +13,19 @@ export function ReviewedQuestions ({ questionData, databaseQuestions }) {
     }
   }
 
+  // uncheck the checkbox if the question is already in the database manage the async
+  useEffect(() => {
+    const $elements = document.querySelectorAll('.div')
+    $elements.forEach(($element) => {
+      const [$input, $label] = $element.children
+      const $title = $label.querySelector('h2').textContent
+      if (question === $title.replace(' ', '')) {
+        $input.checked = false
+      }
+    })
+  }, [databaseQuestions])
   return (
-    <div>
+    <div className='div'>
       <input
         type="checkbox"
         name={labelId}
