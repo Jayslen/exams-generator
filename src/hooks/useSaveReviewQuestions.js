@@ -13,7 +13,7 @@ export function useSaveReviewQuestion () {
   const handleSubmit = (e) => {
     e.preventDefault()
     const { subject, ...answers } = Object.fromEntries(new FormData(e.target))
-    if (!answers || !subject) {
+    if (Object.keys(answers).length === 0 || !subject) {
       toast.error('Por favor llene el campo y seleccione las preguntas a subir')
       return
     }
