@@ -8,7 +8,7 @@ export function ModalComponent ({
   secondText,
   confirmBtnText,
   declineBtnText,
-  confirmBtnAction,
+  confirmBtnAction = () => {},
   declineBtnAction = () => {},
   closeModal
 }) {

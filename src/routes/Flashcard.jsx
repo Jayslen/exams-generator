@@ -35,7 +35,7 @@ export function FlashcardRoute () {
         <p className='my-4 inline-block'>No Hay mas flashcards para mostrar</p>
       )}
       {subjects.length > 0 && (
-        <ul className="flex flex-wrap gap-3 my-4 w-full">
+        <ul className="flex flex-wrap items-center gap-3 my-4 w-full">
           {subjects.map(({ subject, color }, index) => {
             return (
               <li
@@ -53,7 +53,7 @@ export function FlashcardRoute () {
               </li>
             )
           })}
-      {loader && <LoaderSvg props={{ color: 'black' }} />}
+      {loader && <LoaderSvg props={{ color: 'black', width: '40', height: '40' }} />}
 
         </ul>
       )}
