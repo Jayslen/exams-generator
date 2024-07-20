@@ -1,5 +1,4 @@
 import { useParams } from 'react-router-dom'
-import { useState } from 'react'
 import { useManageForm } from '../hooks/useManageForm'
 import { Button } from '../components/Buttons'
 import { QuestionComponent } from '../components/QuestionComponent'
@@ -8,6 +7,7 @@ import { ModalComponent } from '../components/ModalComponent'
 export function Exam () {
   const { id } = useParams()
   const {
+    openModal,
     currentQuestionIndex,
     currentAnswer,
     isChecked,
@@ -17,14 +17,10 @@ export function Exam () {
     CURRENT_QUESTION,
     CURRENT_ANSWER_IS_CORRECT,
     CURRENT_ANSWER_IS_WRONG,
-    CURRENT_PROGRESS,
     clearExamProgress,
-    handleSubmit
+    handleSubmit,
+    closModal
   } = useManageForm({ id })
-  const [openModal, setOpenModal] = useState(Boolean(CURRENT_PROGRESS))
-  const closModal = () => {
-    setOpenModal((prev) => !prev)
-  }
 
   const ANSWER_MESSAGE = CURRENT_ANSWER_IS_CORRECT
     ? 'Has acertado'

@@ -28,12 +28,20 @@ export function useManageForm ({ id }) {
   const CURRENT_ANSWER_IS_WRONG =
     currentAnswer !== correctAnswer && currentAnswer
 
-  // update the useranswer if there is a progress saved in the local storage
-  useEffect(() => {
-    if (CURRENT_PROGRESS) {
-      setUserAnswers(CURRENT_PROGRESS.progress)
-    }
-  }, [])
+  const [openModal, setOpenModal] = useState(Boolean(CURRENT_PROGRESS))
+
+  // *update the useranswer if there is a progress saved in the local storage
+  // !test purpose
+  // useEffect(() => {
+  //   console.log(CURRENT_PROGRESS)
+  //   if (CURRENT_PROGRESS) {
+  //     setUserAnswers(CURRENT_PROGRESS.progress)
+  //   }
+  // }, [])
+
+  const closModal = () => {
+    setOpenModal((prev) => !prev)
+  }
 
   const generateUserAnswersObj = ({
     question,
@@ -160,6 +168,7 @@ export function useManageForm ({ id }) {
     return () => window.removeEventListener('keyup', handleKeyPress)
   })
   return {
+    openModal,
     currentQuestionIndex,
     currentAnswer,
     isChecked,
@@ -169,8 +178,8 @@ export function useManageForm ({ id }) {
     CURRENT_QUESTION,
     CURRENT_ANSWER_IS_CORRECT,
     CURRENT_ANSWER_IS_WRONG,
-    CURRENT_PROGRESS,
     clearExamProgress,
-    handleSubmit
+    handleSubmit,
+    closModal
   }
 }
