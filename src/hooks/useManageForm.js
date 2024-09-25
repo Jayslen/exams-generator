@@ -22,7 +22,8 @@ export function useManageForm ({ id }) {
   const navigate = useNavigate()
 
   const CURRENT_QUESTION = CURRENT_EXAM[currentQuestionIndex]
-  const { question, options, correctAnswer } = CURRENT_QUESTION
+  const { question, correctAnswer } = CURRENT_QUESTION
+  const options = CURRENT_QUESTION.options.toSorted(() => 0.5 - Math.random())
 
   const CURRENT_ANSWER_IS_CORRECT = currentAnswer === correctAnswer
   const CURRENT_ANSWER_IS_WRONG =
